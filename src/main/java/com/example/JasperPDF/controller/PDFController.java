@@ -73,4 +73,24 @@ public class PDFController {
 		model.put("reportRows", mapper.mapProjection(projectionReport));
 		return "ReporteProyecciones";
 	}
+
+
+
+    // PDF (informes/reporte-tecnico)
+	@PostMapping("/reporte-tecnico2")
+	public String goEconomicSummary(@RequestBody List<TechnicalReport> source) {
+		technicalReport.clear();
+		for(TechnicalReport es : source) {
+			technicalReport.add(es);
+		}
+
+		return "ReporteTecnico";
+	}
+
+	@GetMapping("/reporte-tecnico2")
+	public String goEconomicSummary(ModelMap model) {
+		model.put("ListTecnico", mapper.mapTechnical(technicalReport));
+		return "ReporteTecnico";
+	}
+	// END
 }

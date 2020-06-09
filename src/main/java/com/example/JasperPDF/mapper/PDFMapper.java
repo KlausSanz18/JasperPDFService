@@ -74,7 +74,7 @@ public class PDFMapper {
 			m.put("Descripcion", rep.getDescription());
 			m.put("Cantidad", rep.getQuantity());
 			m.put("Funcionario", rep.getEmployee());
-			m.put("Orden", rep.getOrderNo());
+			m.put("Orden", Integer.parseInt(rep.getOrderNo()));
 			
 			listTecnico.add(m);
 		}
@@ -139,4 +139,8 @@ public class PDFMapper {
 		}
 		return listproyecciones;
 	}
+
+
+
+	
 }
