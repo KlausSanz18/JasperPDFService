@@ -77,7 +77,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Proyección automática]]></text>
+				<text><![CDATA[Proyección]]></text>
 			</staticText>
 			<image onErrorType="Icon">
 				<reportElement x="20" y="16" width="120" height="50" uuid="dc4d6f3f-350f-435b-87d2-426c57805d2c"/>

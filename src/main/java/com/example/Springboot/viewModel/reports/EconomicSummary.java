@@ -2,6 +2,7 @@ package com.example.Springboot.viewModel.reports;
 
 public class EconomicSummary {
 	private String code;
+	private Date startDate;
 	private String description;
 	private double quantity;
 	private double price;
@@ -12,7 +13,14 @@ public class EconomicSummary {
 	public EconomicSummary() {
 		
 	}
-	
+
+	public Date getStartDate(){
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
 	public String getCode() {
 		return code;
 	}

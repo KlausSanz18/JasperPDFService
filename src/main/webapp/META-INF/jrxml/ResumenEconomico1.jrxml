@@ -46,7 +46,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Resumen  Económico ]]></text>
+				<text><![CDATA[Informe General]]></text>
 			</staticText>
 			<image onErrorType="Icon">
 				<reportElement x="50" y="16" width="120" height="50" uuid="da96abd5-1aaa-45d0-a40f-03c17db3c50c"/>
@@ -78,7 +78,7 @@
 				<box>
 					<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 				</box>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ítem]]></text>
@@ -172,7 +172,7 @@
 					<box>
 						<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 					</box>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<paragraph rightIndent="1"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Item}]]></textFieldExpression>

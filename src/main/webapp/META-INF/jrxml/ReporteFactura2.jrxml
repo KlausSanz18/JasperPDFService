@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteFactura2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df98cc3d-2305-44cb-b5f2-5b4301217b58">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="materiales" class="java.lang.Double"/>
+	<field name="fecha1" class="java.util.Date"/>
+	<field name="servicios" class="java.lang.Double"/>
+	<field name="equipos" class="java.lang.Double"/>
+	<field name="fecha2" class="java.util.Date"/>
+	<variable name="total1" class="java.lang.Double" resetType="Group" resetGroup="General" calculation="Sum">
+		<variableExpression><![CDATA[$F{equipos}]]></variableExpression>
+	</variable>
+	<variable name="total2" class="java.lang.Double" resetType="Group" resetGroup="General" calculation="Sum">
+		<variableExpression><![CDATA[$F{equipos}]]></variableExpression>
+	</variable>
+	<variable name="servicios1" class="java.lang.Double" resetType="Group" resetGroup="General" calculation="Sum">
+		<variableExpression><![CDATA[$F{servicios} + $F{equipos} + $F{materiales}]]></variableExpression>
+	</variable>
+	<group name="General">
+		<groupExpression><![CDATA[$F{fecha1}]]></groupExpression>
+		<groupHeader>
+			<band height="45">
+				<staticText>
+					<reportElement x="80" y="0" width="300" height="15" uuid="afe57e38-fe53-498c-9729-dae9c7c8f74f">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement>
+						<paragraph leftIndent="1"/>
+					</textElement>
+					<text><![CDATA[Equipos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="80" y="15" width="300" height="15" uuid="b313481d-13fb-4b4a-93b1-1df00f176c5a">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement>
+						<paragraph leftIndent="1"/>
+					</textElement>
+					<text><![CDATA[Materiales]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="80" y="30" width="300" height="15" uuid="5d9e287a-d52a-48f9-891b-a979007e2276">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement>
+						<paragraph leftIndent="1"/>
+					</textElement>
+					<text><![CDATA[Servicios]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="80" height="15" uuid="a22490f3-612e-4258-aae7-f266fd36e596"/>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="15" width="80" height="15" uuid="93b0e0bf-1851-47ce-8af8-378d960eadf8"/>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="30" width="80" height="15" uuid="742f6b1e-8577-4926-a4ab-e857785cf0b2"/>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[3]]></text>
+				</staticText>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="380" y="15" width="170" height="15" uuid="e5efaee3-aefb-4a09-b42b-59a7ba32e466">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{materiales}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="380" y="30" width="170" height="15" uuid="89857ecc-2520-41e4-8a14-dee3d838d3cd">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{servicios}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="380" y="0" width="170" height="15" uuid="03a3231f-2b46-43b5-bbf6-6eb1faceda72">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{equipos}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="55">
+				<staticText>
+					<reportElement x="320" y="11" width="60" height="14" uuid="905ed872-ebf2-41a5-a938-3b773193ba07">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<text><![CDATA[Subtotal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="320" y="25" width="60" height="15" uuid="445ac8fe-f59c-49d1-93d0-bfee93ae4919">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<text><![CDATA[Impuesto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="320" y="40" width="60" height="15" uuid="b82ef405-b35e-468a-9d2d-c1f9a7ab52a1">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="380" y="11" width="170" height="14" uuid="53e9364b-e76f-4444-9421-b1134a25d98d">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<paragraph rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{servicios1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="380" y="25" width="170" height="15" uuid="e3b65cc2-b1a6-4346-942c-164c3dc8c1d5">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<paragraph rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{servicios1} *0.18]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="380" y="40" width="170" height="15" uuid="39ff811a-61d1-4d2c-8f78-bf3424d2d572">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<paragraph rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{servicios1}*1.18]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image onErrorType="Icon">
+				<reportElement x="10" y="0" width="130" height="70" uuid="0a4d241a-0ee4-4b6e-bf65-bccbe8c2c68e"/>
+				<imageExpression><![CDATA["/../../resources/img/cmi.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="10" y="70" width="190" height="66" uuid="7b8e1c60-600a-44e3-bc50-daa46116a758"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RNC 1-31-91617-1
+Av. Enrique Jiménez Moya No. 71, esq.
+c/ Desiderio Arias, 2do Piso, La Julia,
+Santo Domingo, R.D.
+Teléfono (809) 518-8706]]></text>
+			</staticText>
+			<textField pattern="Mmm d, yyyy">
+				<reportElement x="430" y="20" width="120" height="30" uuid="931b233b-10ec-4122-87de-6a1c9e2c2d35"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[(new java.text.SimpleDateFormat("MMMM d, yyyy",new Locale("es", "ES"))).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="120" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="55" width="390" height="65" uuid="67ae8371-171f-4a6f-9ea5-91739f741af3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="25" width="100" height="30" uuid="07c43dd8-9d74-46b2-ab3c-e3a63292e0b1"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Facturar a:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="55" width="370" height="25" uuid="06ac0f5c-61d2-4889-be2a-26b791d99e33">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Instituto Nacional de Tránsito y Transporte Terrestre (INTRANT)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="70" width="370" height="50" uuid="20dddee5-c5b9-4821-8fe3-5d0554acce42">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[RNC 430-231568
+C/Pepillo Salcedo, frente al Estado Quisqueya, Ensanche la Fé
+Teléfono (809) 338-6134]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="49" width="80" height="30" backcolor="#DEE2E6" uuid="75c7df5c-3c88-4152-b691-122a35b349be">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd89e6f4-f08b-40d4-b773-3dd069943954"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="49" width="300" height="30" backcolor="#DEE2E6" uuid="00fa77e6-7ec5-416c-9003-322fe535e74c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fcdbe37a-03ad-45c5-843f-d1db6f1a3936"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Categoría ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="380" y="49" width="170" height="30" backcolor="#DEE2E6" uuid="4439fb2a-e88c-4de6-80c3-84df2ccb2344">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="434a010e-d169-4a16-9c8f-bb472c727c22"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCC8C8"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="32" width="78" height="17" uuid="3735d70e-56ce-45ad-8897-920ba1b83716">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10"/>
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Periodo:]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="40" y="32" width="70" height="17" uuid="a872dc03-9568-4b0b-b447-0bca469170f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="110" y="32" width="70" height="17" uuid="b08be8f7-7eb4-4134-81a6-5aad54b1d717">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="90" y="30" width="20" height="20" uuid="5db28337-b76a-4c35-8ab9-b7c2c8c7e023"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="129" splitType="Stretch">
+			<line>
+				<reportElement x="2" y="98" width="178" height="1" uuid="d07eee1f-78f2-4593-a90d-b6a87c1b1ac9"/>
+			</line>
+			<line>
+				<reportElement x="225" y="99" width="174" height="1" uuid="02c109b6-1255-4e4f-beb4-9bd6285b2e6d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="20" y="99" width="100" height="21" uuid="93ce1d9a-ede0-4683-8e28-c017a67056af"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Preparado por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="99" width="100" height="30" uuid="cc984edc-ddd7-4d7d-b59e-4aaa07e2d432"/>
+				<text><![CDATA[Revisado por:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
