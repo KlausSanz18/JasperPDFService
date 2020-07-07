@@ -3,6 +3,7 @@ package com.example.Springboot.viewModel.reports;
 public class ProjectionReport {
 
 	private String description;
+	private String category;
 	private double hiredPrice;
 	private double hiredCount;
 	private double hiredValue;
@@ -132,6 +133,14 @@ public class ProjectionReport {
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 	

@@ -79,7 +79,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[Proyección de Presupuesto]]></text>
+				<text><![CDATA[Avance de Presupuesto]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="287" y="56" width="186" height="18" uuid="8e9c8744-fdff-4ed5-a435-633f6368f2c0"/>
@@ -94,7 +94,7 @@
 			</image>
 			<image onErrorType="Icon">
 				<reportElement x="590" y="20" width="146" height="50" uuid="e38c1bbd-f829-41c3-a2c7-c26efba36896"/>
-				<imageExpression><![CDATA["/../../resources/img/intrant.png"]]></imageExpression>
+				<imageExpression><![CDATA["/../../META-INF/images/intrant.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
