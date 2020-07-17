@@ -237,10 +237,13 @@ public class PDFMapper {
 
 
 	public List<Map<String, ?>> findProyecciones2(List<ProjectProgress> list){
+
 		List<Map<String,?>> listproyecciones = new ArrayList<Map<String, ?>>();
-		Double[] totals = new Double[3];
-		totals[0] = 0.00;
+		
+		Double totals =  0.00;
+		
 		for(ProjectProgress rep : list ) {
+
 			Map<String, Object> m = new HashMap<String, Object>();
 			Date generated = new Date();
 
@@ -250,25 +253,28 @@ public class PDFMapper {
 			m.put("Unidades_contratada", rep.getaHiredCount());
 			m.put("Monto_contratada", rep.getaHiredValue());
 			
-			m.put("Unidades_acumulada", rep.getActualCount());
-			m.put("Monto_acumulada", rep.getActualValue());
+			m.put("Unidades_acumulada", rep.getPreviousCount());
+			m.put("Monto_acumulada", rep.getPreviousValue());
 
-			m.put("Unidades_ejecutadas", rep.getPreviousCount());
-			m.put("Monto_ejecutadas", rep.getPreviousValue());
+			m.put("Unidades_ejecutadas", rep.getActualCount());
+			m.put("Monto_ejecutadas", rep.getActualValue());
 			
-			m.put("UnidadesTotalE", (rep.getActualCount()+rep.getPreviousCount()));
-			m.put("Monto_TotalE", (rep.getActualValue()+rep.getPreviousValue()));
+			m.put("UnidadesTotalE", rep.getTotalCount());
+			m.put("Monto_TotalE", (rep.getActualValue() + rep.getPreviousValue()));
 
-			m.put("Unidades_disponibles", (rep.getaHiredCount()-(rep.getActualCount()+rep.getPreviousCount())));
-			m.put("Monto_disponibles", (rep.getaHiredValue()-(rep.getActualValue()+rep.getPreviousValue())));
-        
-			m.put("subtotal",totals[0] = totals[0] + rep.getSubtotal());
-			m.put("tax", totals[0]*0.18);
-			m.put("total", totals[0]*0.18);
+
+			// m.put("Unidades_disponibles", (rep.getaHiredCount()-(rep.getActualCount()+rep.getPreviousCount())));
+			m.put("Monto_disponibles",  (rep.getActualValue() + rep.getPreviousValue()));
+		
+			m.put("Categoria", rep.getaType());
+			// m.put("subtotal",totals = totals + rep.getSubtotal());
+			m.put("tax", totals * 0.18 );
+			m.put("total", totals * 0.18 );
 			// m.put("generationDate", generated);
 
 			listproyecciones.add(m);
 		}
+
 		return listproyecciones;
 	}
 

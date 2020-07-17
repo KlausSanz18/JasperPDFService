@@ -112,6 +112,15 @@ public class ProjectProgress {
 	public void setTotal(double total) {
 		this.total = total;
 	}
+
+	@Override
+	public String toString() {
+		return "ProjectProgress [aDescription=" + aDescription + ", aHiredCount=" + aHiredCount + ", aHiredValue="
+				+ aHiredValue + ", aPrice=" + aPrice + ", aType=" + aType + ", actualCount=" + actualCount
+				+ ", actualValue=" + actualValue + ", previousCount=" + previousCount + ", previousValue="
+				+ previousValue + ", subtotal=" + subtotal + ", tax=" + tax + ", total=" + total + ", totalCount="
+				+ totalCount + ", totalValue=" + totalValue + "]";
+	}
 	
 	
 }

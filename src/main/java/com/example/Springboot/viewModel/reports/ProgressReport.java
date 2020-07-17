@@ -31,4 +31,11 @@ public class ProgressReport {
 	public void setMaterials(List<ProjectProgress> materials) {
 		this.materials = materials;
 	}
+
+	@Override
+	public String toString() {
+		return "ProgressReport [equipment=" + equipment + ", materials=" + materials + ", services=" + services + "]";
+	}
+
+	
 }
