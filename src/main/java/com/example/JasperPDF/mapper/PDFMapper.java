@@ -111,8 +111,7 @@ public class PDFMapper {
 	public List<Map<String, ?>> mapProjection2(List<ProjectionReport> list){
 		List<Map<String,?>> listdinamico = new ArrayList<Map<String, ?>>();
 		
-		Double[] totals = new Double[3];
-		totals[0] = 0.00;
+		Double subTotals = 0.00;
 
 		for(ProjectionReport rep : list ) {
 			Map<String, Object> m = new HashMap<String, Object>();
@@ -139,14 +138,14 @@ public class PDFMapper {
 				m.put("Valor_total", rep.getTotalCount() * rep.getHiredPrice());
 			}
 
-			m.put("subtotal", totals[0]);
-			m.put("tax", rep.getTax());
-			m.put("total", totals[0] = totals[0] + rep.getTotal());
+			m.put("subtotal", subTotals = subTotals + rep.getPreviousValue2());
+			m.put("tax", subTotals * 0.18 );
+			m.put("total", subTotals * 1.18 );
 			m.put("Categoria", rep.getCategory());
 			
 			listdinamico.add(m);	
 		}
-
+		
 		return listdinamico;
 	}
 

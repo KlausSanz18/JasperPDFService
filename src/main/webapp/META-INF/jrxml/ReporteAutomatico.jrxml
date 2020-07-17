@@ -62,7 +62,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Proyección automática]]></text>
+				<text><![CDATA[Proyección dinámica]]></text>
 			</staticText>
 			<image onErrorType="Icon">
 				<reportElement x="20" y="16" width="120" height="50" uuid="dc4d6f3f-350f-435b-87d2-426c57805d2c"/>
@@ -231,7 +231,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9"/>
 				</textElement>
-				<text><![CDATA[Contratual]]></text>
+				<text><![CDATA[Contratada]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="340" y="0" width="100" height="30" backcolor="#DEE2E6" uuid="7c76d8de-f69a-4ff4-a0f7-212ccfbd6540"/>
