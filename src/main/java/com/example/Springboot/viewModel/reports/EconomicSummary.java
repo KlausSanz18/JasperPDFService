@@ -1,6 +1,11 @@
 package com.example.Springboot.viewModel.reports;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class EconomicSummary {
+
+	private String location;
 	private String code;
 	private Date startDate;
 	private String description;
@@ -10,12 +15,14 @@ public class EconomicSummary {
 	private double tax;
 	private double total;
 	
+	SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+	
 	public EconomicSummary() {
 		
 	}
 
-	public Date getStartDate(){
-		return startDate;
+	public String getStartDate() {
+		return formatter.format(startDate);
 	}
 
 	public void setStartDate(Date startDate) {
@@ -62,6 +69,14 @@ public class EconomicSummary {
 	}
 	public void setTotal(double total) {
 		this.total = total;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 	

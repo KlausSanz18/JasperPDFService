@@ -1,6 +1,5 @@
 package com.example.JasperPDF.mapper;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,11 +13,41 @@ import com.example.Springboot.viewModel.reports.TechnicalReport;
 import com.example.Springboot.viewModel.reports.IntersectionReport;
 import com.example.Springboot.viewModel.reports.ItemManagement;
 import com.example.Springboot.viewModel.reports.PreBilling;
+import com.example.Springboot.viewModel.reports.ProjectProgress;
 
 
 public class PDFMapper {
 	
 	public List<Map<String, ?>> mapEconomic(List<EconomicSummary> list){
+		List<Map<String,?>> listresumen = new ArrayList<Map<String, ?>>();
+		
+		Double Total = 0.00;
+		for(EconomicSummary rep : list ) {
+			Map<String, Object> m = new HashMap<String, Object>();
+
+			m.put("Ubicacion", rep.getLocation());
+			m.put("Fecha", rep.getStartDate());
+			m.put("Item", rep.getCode());
+			m.put("Descripcion", rep.getDescription());
+			m.put("Cantidad", rep.getQuantity());
+			m.put("Precio", rep.getPrice());
+			m.put("subtotal", rep.getSubtotal());
+			m.put("Tax", rep.getTax());
+			m.put("Total",rep.getTotal());
+			Total = Total + (rep.getQuantity()*rep.getPrice());
+			m.put("SubTotals",Total);
+			m.put("Taxs",Total *0.18);
+			m.put("Totals",Total *1.18);
+			
+			listresumen.add(m);
+			
+		}
+		return listresumen;
+	}
+
+
+
+	public List<Map<String, ?>> mapGeneral(List<EconomicSummary> list){
 		List<Map<String,?>> listresumen = new ArrayList<Map<String, ?>>();
 		
 		Double Total = 0.00;
@@ -48,20 +77,72 @@ public class PDFMapper {
 		
 		for(ProjectionReport rep : list ) {
 			Map<String, Object> m = new HashMap<String, Object>();
+			
 			m.put("Descripcion", rep.getDescription());
 			m.put("Precio_item", rep.getHiredPrice());
+
 			m.put("Unidades_contratada", rep.getHiredCount());
 			m.put("valor_cantratada", rep.getHiredValue());
+
 			m.put("Unidades_ejecutadas", rep.getTotalCount());
 			m.put("%_ejecutadas", rep.getTotalPercentage());
 			m.put("Valor_ejecutadas", rep.getTotalValue());
+
 			m.put("Unidades_proyectadas", rep.getAvailableCount());
-			m.put("Valor_proyectadas", rep.getAvailableValue() );
+			m.put("Valor_proyectadas", rep.getAvailableValue());
+			
 			m.put("Unidades_total", rep.getAvailableCount());
 			m.put("Valor_total", rep.getAvailableValue());
+
+
 			m.put("subtotal",rep.getSubtotal());
 			m.put("tax", rep.getTax());
 			m.put("total", rep.getTotal());
+			m.put("Categoria", rep.getCategory());
+			
+			listdinamico.add(m);	
+		}
+
+		return listdinamico;
+	}
+
+
+
+	public List<Map<String, ?>> mapProjection2(List<ProjectionReport> list){
+		List<Map<String,?>> listdinamico = new ArrayList<Map<String, ?>>();
+		
+		Double[] totals = new Double[3];
+		totals[0] = 0.00;
+
+		for(ProjectionReport rep : list ) {
+			Map<String, Object> m = new HashMap<String, Object>();
+			
+			m.put("Descripcion", rep.getDescription());
+			m.put("Precio_item", rep.getHiredPrice());
+
+			m.put("Unidades_contratada", rep.getHiredCount());
+			m.put("valor_cantratada", rep.getHiredValue());
+
+			m.put("Unidades_ejecutadas", rep.getTotalCount());
+			m.put("Valor_ejecutadas", rep.getPreviousValue());
+			
+			m.put("Unidades_proyectadas", rep.getAvailableCount2());
+			m.put("Valor_proyectadas", rep.getProjectedValue());
+
+			if ( rep.getAvailableCount2() > 0 ) {
+				m.put("Unidades_total", rep.getTotal_unidades());
+				m.put("%_ejecutadas", ( ( rep.getAvailableCount2() + rep.getTotalCount() ) / rep.getHiredCount() ) * 100 );
+				m.put("Valor_total", rep.getPreviousValue2());
+			}else {
+				m.put("Unidades_total", rep.getTotalCount());
+				m.put("%_ejecutadas", ( rep.getTotalCount() / rep.getHiredCount() ) * 100 );
+				m.put("Valor_total", rep.getTotalCount() * rep.getHiredPrice());
+			}
+
+			m.put("subtotal", totals[0]);
+			m.put("tax", rep.getTax());
+			m.put("total", totals[0] = totals[0] + rep.getTotal());
+			m.put("Categoria", rep.getCategory());
 			
 			listdinamico.add(m);	
 		}
@@ -125,19 +206,23 @@ public class PDFMapper {
 			Date generated = new Date();
 
 			m.put("Descripcion", rep.getDescription());
+
 			m.put("Precio", rep.getHiredPrice());
 			m.put("Unidades_contratada", rep.getHiredCount());
 			m.put("Monto_contratada", rep.getHiredValue());
 			
-			m.put("Unidades_acumulada", rep.getPreviousCount());
-			m.put("Monto_acumulada", rep.getPreviousValue());
-			m.put("Unidades_ejecutadas", rep.getActualCount());
-			m.put("Monto_ejecutadas", rep.getActualValue());
+			m.put("Unidades_acumulada", rep.getActualCount());
+			m.put("Monto_acumulada", rep.getActualValue());
+
+			m.put("Unidades_ejecutadas", rep.getPreviousCount());
+			m.put("Monto_ejecutadas", rep.getPreviousValue());
 			
-			m.put("UnidadesTotalE", rep.getFinalCount());
-			m.put("Monto_TotalE", rep.getFinalCount() * rep.getHiredPrice());
-			m.put("Unidades_disponibles", rep.getAvailableCount());
-			m.put("Monto_disponibles", rep.getAvailableValue());
+			m.put("UnidadesTotalE", (rep.getActualCount()+rep.getPreviousCount()));
+			m.put("Monto_TotalE", (rep.getActualValue()+rep.getPreviousValue()));
+
+			m.put("Unidades_disponibles", (rep.getHiredCount()-(rep.getActualCount()+rep.getPreviousCount())));
+			m.put("Monto_disponibles", (rep.getHiredValue()-(rep.getActualValue()+rep.getPreviousValue())));
+
 			m.put("Categoria", rep.getCategory());
 			m.put("subtotal",rep.getSubtotal());
 			m.put("tax", rep.getTax());
@@ -149,6 +234,44 @@ public class PDFMapper {
 		return listproyecciones;
 	}
 
+
+
+
+	public List<Map<String, ?>> findProyecciones2(List<ProjectProgress> list){
+		List<Map<String,?>> listproyecciones = new ArrayList<Map<String, ?>>();
+		Double[] totals = new Double[3];
+		totals[0] = 0.00;
+		for(ProjectProgress rep : list ) {
+			Map<String, Object> m = new HashMap<String, Object>();
+			Date generated = new Date();
+
+			m.put("Descripcion", rep.getaDescription());
+
+			m.put("Precio", rep.getaPrice());
+			m.put("Unidades_contratada", rep.getaHiredCount());
+			m.put("Monto_contratada", rep.getaHiredValue());
+			
+			m.put("Unidades_acumulada", rep.getActualCount());
+			m.put("Monto_acumulada", rep.getActualValue());
+
+			m.put("Unidades_ejecutadas", rep.getPreviousCount());
+			m.put("Monto_ejecutadas", rep.getPreviousValue());
+			
+			m.put("UnidadesTotalE", (rep.getActualCount()+rep.getPreviousCount()));
+			m.put("Monto_TotalE", (rep.getActualValue()+rep.getPreviousValue()));
+
+			m.put("Unidades_disponibles", (rep.getaHiredCount()-(rep.getActualCount()+rep.getPreviousCount())));
+			m.put("Monto_disponibles", (rep.getaHiredValue()-(rep.getActualValue()+rep.getPreviousValue())));
+        
+			m.put("subtotal",totals[0] = totals[0] + rep.getSubtotal());
+			m.put("tax", totals[0]*0.18);
+			m.put("total", totals[0]*0.18);
+			// m.put("generationDate", generated);
+
+			listproyecciones.add(m);
+		}
+		return listproyecciones;
+	}
 
 
 	public List<Map<String, ?>> findInterseccion(List<IntersectionReport> list){

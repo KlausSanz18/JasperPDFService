@@ -9,21 +9,31 @@ public class ProjectionReport {
 	private double hiredValue;
 	private double previousCount;
 	private double previousValue;
+	private double previousValue2;
 	private double actualCount;
 	private double actualValue;
 	private double totalCount;
 	private double totalPercentage;
 	private double totalValue;
 	private double availableCount;
+	private double availableCount2;
 	private double availableValue;
 	private double finalCount;
-	private double subtotal;
+	private Double subtotal;
 	private double tax;
 	private double total;
+	private double projectedValue;
+	private double total_unidades;
 	
 	
 	public ProjectionReport() {
-		
+		// this.previousValue2 =(hiredPrice*previousValue);
+		// this.projectedValue = (hiredPrice*availableCount);
+		// if (this.availableCount2 >0) {
+		// 	this.setPreviousValue2(previousValue2 * hiredPrice);
+		// }else {
+		// 	this.setPreviousValue2(totalCount * hiredPrice);
+		// }
 	}
 	
 	public String getDescription() {
@@ -111,27 +121,27 @@ public class ProjectionReport {
 		this.finalCount = finalCount;
 	}
 
-	public double getSubtotal() {
+	public Double getSubtotal() {
 		return subtotal;
 	}
 
-	public void setSubtotal(double subtotal) {
+	public void setSubtotal(Double subtotal) {
 		this.subtotal = subtotal;
 	}
 
-	public double getTax() {
+	public Double getTax() {
 		return tax;
 	}
 
-	public void setTax(double tax) {
+	public void setTax(Double tax) {
 		this.tax = tax;
 	}
 
-	public double getTotal() {
+	public Double getTotal() {
 		return total;
 	}
 
-	public void setTotal(double total) {
+	public void setTotal(Double total) {
 		this.total = total;
 	}
 
@@ -141,6 +151,46 @@ public class ProjectionReport {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public double getPreviousValue2() {
+		return previousValue2;
+	}
+
+	public void setPreviousValue2(double previousValue2) {
+		this.previousValue2 = previousValue2;
+	}
+
+	public double getAvailableCount2() {
+		return availableCount2;
+	}
+
+	public void setAvailableCount2(double availableCount2) {
+		this.availableCount2 = availableCount2;
+	}
+
+	public void setTax(double tax) {
+		this.tax = tax;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+	public double getProjectedValue() {
+		return projectedValue;
+	}
+
+	public void setProjectedValue(double projectedValue) {
+		this.projectedValue = projectedValue;
+	}
+
+	public double getTotal_unidades() {
+		return total_unidades;
+	}
+
+	public void setTotal_unidades(double total_unidades) {
+		this.total_unidades = total_unidades;
 	}
 	
 	

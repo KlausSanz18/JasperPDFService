@@ -38,16 +38,6 @@ public class ItemManagement {
         this.startDate = startDate;
     }
 
-    public Integer getNoItem() {
-        return noItem;
-    }
-
-    public void setNoItem(Integer noItem) {
-        this.noItem = noItem;
-    }
-
-    
-
     public Double getQuantity() {
         return quantity;
     }

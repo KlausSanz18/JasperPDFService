@@ -12,6 +12,9 @@ public class ProjectProgress {
 	private double actualValue;
 	private double totalCount;
 	private double totalValue;
+	private Double subtotal;
+	private Double tax;
+	private Double total;
 	
 	public ProjectProgress() {
 		
@@ -84,6 +87,30 @@ public class ProjectProgress {
 
 	public void setaType(String aType) {
 		this.aType = aType;
+	}
+
+	public double getSubtotal() {
+		return subtotal;
+	}
+
+	public void setSubtotal(double subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	public double getTax() {
+		return tax;
+	}
+
+	public void setTax(double tax) {
+		this.tax = tax;
+	}
+
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
 	}
 	
 	

@@ -21,6 +21,7 @@ import com.example.Springboot.viewModel.reports.IntersectionReport;
 import com.example.Springboot.viewModel.reports.IntersectionActivity;
 import com.example.Springboot.viewModel.reports.PreBilling;
 import com.example.Springboot.viewModel.reports.ItemManagement;
+import com.example.Springboot.viewModel.reports.ProjectProgress;
 
 @Controller
 @CrossOrigin
@@ -36,10 +37,28 @@ public class PDFController {
 	List<IntersectionReport> intersectionReport = new LinkedList<IntersectionReport>();
 	List<IntersectionActivity> intersectionActivity = new LinkedList<IntersectionActivity>();
 	List<ItemManagement> itemManagement = new LinkedList<ItemManagement>();
+	List<ProjectProgress> projectProgress = new LinkedList<ProjectProgress>();
 
 	
-	@PostMapping("/Summary")
+	@PostMapping("/reporte-general")
 	public String getTest(@RequestBody List<EconomicSummary> source) {
+		economicSummary.clear();
+		for(EconomicSummary r : source) {
+			economicSummary.add(r);
+		}
+
+		return "ResumenGeneral";
+	}
+	
+	@GetMapping("/reporte-general")
+	public String getPDF(ModelMap model) {
+		model.put("ListResumen", mapper.mapGeneral(economicSummary));
+		return "ResumenGeneral";
+	}
+
+
+	@PostMapping("/reporte-economico")
+	public String setEconimics(@RequestBody List<EconomicSummary> source) {
 		economicSummary.clear();
 		for(EconomicSummary r : source) {
 			economicSummary.add(r);
@@ -48,14 +67,15 @@ public class PDFController {
 		return "ResumenEconomico";
 	}
 	
-	@GetMapping("/Summary")
-	public String getPDF(ModelMap model) {
+	@GetMapping("/reporte-economico")
+	public String getEconimics(ModelMap model) {
 		model.put("ListResumen", mapper.mapEconomic(economicSummary));
 		return "ResumenEconomico";
 	}
 	
 	@PostMapping("/Proyeccion")
 	public String setData(@RequestBody List<ProjectionReport> source) {
+		projectionReport.clear();
 		for(ProjectionReport r : source) {
 			projectionReport.add(r);
 		}
@@ -65,7 +85,7 @@ public class PDFController {
 
 	@GetMapping("/Proyeccion")
 	public String getProyection(ModelMap model){
-		model.put("ListProjection", mapper.mapProjection(projectionReport));
+		model.put("ListProjection", mapper.mapProjection2(projectionReport));
 		return "ReporteAutomatico";
 	}
 
@@ -121,10 +141,10 @@ public class PDFController {
 
 
 	@PostMapping("/avance-general")
-	public String getGeneralAdvance(@RequestBody List<ProjectionReport> source){
+	public String setGeneralAdvance(@RequestBody List<ProjectProgress> source){
 		projectionReport.clear();
-		for(ProjectionReport es : source) {
-			projectionReport.add(es);
+		for(ProjectProgress es : source) {
+			projectProgress.add(es);
 		}
 
 		return "AvanceGeneral";
@@ -133,7 +153,7 @@ public class PDFController {
 
 	@GetMapping("/avance-general")
 	public String getGeneralAdvance(ModelMap model){
-		model.put("ListAvances", mapper.findProyecciones(projectionReport));
+		model.put("ListAvances", mapper.findProyecciones2(projectProgress));
 		return "AvanceGeneral";
 	}
 

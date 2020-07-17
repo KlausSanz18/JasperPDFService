@@ -9,20 +9,19 @@
 
 try {
 	//OBTIENE LOS VALORES DEL CONTROLADOR
-	List<Map<String, ?>> dataSource = (List<Map<String, ?>>) request.getAttribute("ListAvances");
+	List<Map<String, ?>> dataSource = (List<Map<String, ?>>) request.getAttribute("ListResumen");
+
 	// CREA UNA VARIABLE TIPO JRBeanCollectionDataSource y le pasa los valores del controlador
 	JRDataSource jrDataSource = new JRBeanCollectionDataSource(dataSource);
-	// 	SE OBTIENE LA DIRECCION DEL REPORTE JASPER
-	String jrxmlFile = session.getServletContext().getRealPath("\\META-INF\\jrxml\\ReporteProyecciones3.jrxml");
-	//String jrxmlFile = "C:\\Users\\alexander.dionicio\\git\\Falconeye-CMI.V2\\WebContent\\META-INF\\reporte\\ReporteProyecciones.jrxml";
+// 	SE OBTIENE LA DIRECCION DEL REPORTE JASPER
+	String jrxmlFile = session.getServletContext().getRealPath("META-INF\\jrxml\\ResumenEconomico1.jrxml");
 	//DECLARAMOS UNA VARIABLE TIPO INPUT STREAM  PARA ACCEDER AL ARCHIVO
 	InputStream input = new FileInputStream(new File(jrxmlFile));
 	//COMPILAMOS EL ARCHIVO JRXML
 	JasperReport jasperReport = JasperCompileManager.compileReport(input);
-	
 	// LLENAMOS EL ARCHIVO COMPILADO CON LOS DATOS DE LA LISTA
 	JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, jrDataSource);
-	// EXPORTAMOS A PDF
+	//EXPORTAMOS A PDF
 	JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
 	response.getOutputStream().flush();
 	response.getOutputStream().close();
@@ -32,6 +31,4 @@ try {
 } catch (Exception e) {
 	e.printStackTrace();
 }
-
-
 %>

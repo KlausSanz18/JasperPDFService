@@ -14,7 +14,7 @@ try {
 	// CREA UNA VARIABLE TIPO JRBeanCollectionDataSource y le pasa los valores del controlador
 	JRDataSource jrDataSource = new JRBeanCollectionDataSource(dataSource);
 // 	SE OBTIENE LA DIRECCION DEL REPORTE JASPER
-	String jrxmlFile = session.getServletContext().getRealPath("META-INF\\jrxml\\ResumenEconomico1.jrxml");
+	String jrxmlFile = session.getServletContext().getRealPath("META-INF\\jrxml\\ResumenEconomico2.jrxml");
 	//DECLARAMOS UNA VARIABLE TIPO INPUT STREAM  PARA ACCEDER AL ARCHIVO
 	InputStream input = new FileInputStream(new File(jrxmlFile));
 	//COMPILAMOS EL ARCHIVO JRXML
