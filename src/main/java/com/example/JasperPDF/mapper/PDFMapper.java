@@ -394,7 +394,6 @@ public class PDFMapper {
 			case "Servicios":
 				valor[0] = valor[0] + rep.getTotalValue();
 				
-				
 				break;
 			case "Materiales":
 				valor[1] = valor[1] + rep.getTotalValue();
@@ -408,17 +407,55 @@ public class PDFMapper {
 				break;
 			
 			}
-
-		}
-		
+		}		
 		m.put("servicios", valor[0]);
 		m.put("materiales", valor[1]);
 		m.put("equipos", valor[2]);
 		m.put("fecha1", new Date());
 		m.put("fecha2", new Date());
+		
+		listfact.add(m);
+		return listfact;
+	}
 
-		// System.out.println("Probando fecha 1: "+date1);
-		// System.out.println("Probando fecha 2: "+date2);
+
+
+
+
+	public List<Map<String, ?>> findFactura_general(List<PreBilling> list){
+		List<Map<String,?>> listfact = new ArrayList<Map<String, ?>>();
+		Double[] valor = new Double[3];
+		valor[0] = 0.00;
+		valor[1] = 0.00;
+		valor[2] = 0.00;
+		Map<String, Object> m = new HashMap<String, Object>();
+		
+		for( PreBilling rep : list ) {
+			
+			switch(rep.getCategory()) {
+							
+			case "Servicios":
+				valor[0] = valor[0] + rep.getPreviousValue();
+				
+				break;
+			case "Materiales":
+				valor[1] = valor[1] + rep.getPreviousValue();
+				
+				break;
+			case "Equipos": 
+				valor[2] = valor[2] + rep.getPreviousValue();
+				
+				break;
+			default: 
+				break;
+			
+			}
+		}		
+		m.put("servicios", valor[0]);
+		m.put("materiales", valor[1]);
+		m.put("equipos", valor[2]);
+		m.put("fecha1", new Date());
+		m.put("fecha2", new Date());
 		
 		listfact.add(m);
 		return listfact;

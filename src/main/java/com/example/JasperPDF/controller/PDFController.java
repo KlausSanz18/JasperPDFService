@@ -1,8 +1,6 @@
 package com.example.JasperPDF.controller;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -236,7 +234,7 @@ public class PDFController {
 		return "BusquedaIndividual";
 	}
 
-	@PostMapping("/facturacion-prefacturacion")
+	@PostMapping("/facturacion-general")
 	public String getPDFPrefacturacion(@RequestBody List<PreBilling> source) {
 		preBilling.clear();
 		for (PreBilling es : source) {
@@ -245,13 +243,13 @@ public class PDFController {
 		return "FacturacionPrefacturacion";
 	}
 
-	@GetMapping("/facturacion-prefacturacion")
+	@GetMapping("/facturacion-general")
 	public String getPDFPrefacturacion(ModelMap model) {
-		model.put("ListFactura", mapper.findFactura(preBilling));
+		model.put("ListFactura", mapper.findFactura_general(preBilling));
 		return "FacturacionPrefacturacion";
 	}
 
-	@PostMapping("/facturacion-prefacturacion2")
+	@PostMapping("/facturacion-acumulado")
 	public String getPDFPrefacturacion2_acumulado(@RequestBody List<PreBilling> source) {
 		preBilling.clear();
 		for (PreBilling es : source) {
@@ -260,7 +258,7 @@ public class PDFController {
 		return "FacturacionPrefacturacion2";
 	}
 
-	@GetMapping("/facturacion-prefacturacion2")
+	@GetMapping("/facturacion-acumulado")
 	public String getPDFPrefacturacion2_acumulado(ModelMap model) {
 		model.put("ListFactura2", mapper.findFactura2(preBilling));
 		return "FacturacionPrefacturacion2";
