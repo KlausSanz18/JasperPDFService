@@ -106,7 +106,7 @@ public class PDFController {
 		return "ReporteProyecciones";
 	}
 
-	@PostMapping("/reporte-tecnico2")
+	@PostMapping("/reporte-tecnico")
 	public String goEconomicSummary(@RequestBody List<TechnicalReport> source) {
 		technicalReport.clear();
 		for (TechnicalReport es : source) {
@@ -116,7 +116,7 @@ public class PDFController {
 		return "ReporteTecnico";
 	}
 
-	@GetMapping("/reporte-tecnico2")
+	@GetMapping("/reporte-tecnico")
 	public String goEconomicSummary(ModelMap model) {
 		model.put("ListTecnico", mapper.mapTechnical(technicalReport));
 		return "ReporteTecnico";

@@ -198,7 +198,7 @@
 		<band height="136" splitType="Stretch">
 			<image onErrorType="Icon">
 				<reportElement x="10" y="0" width="130" height="70" uuid="0a4d241a-0ee4-4b6e-bf65-bccbe8c2c68e"/>
-				<imageExpression><![CDATA["/../../resources/img/cmi.png"]]></imageExpression>
+				<imageExpression><![CDATA["https://www.intrant.gob.do/images/Logos/logo-portal-movil.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="10" y="70" width="190" height="66" uuid="7b8e1c60-600a-44e3-bc50-daa46116a758"/>

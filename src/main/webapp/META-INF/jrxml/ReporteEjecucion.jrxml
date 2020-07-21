@@ -33,7 +33,7 @@
 			</staticText>
 			<image onErrorType="Icon">
 				<reportElement x="20" y="16" width="120" height="50" uuid="7d1f0634-9534-4c57-825f-068e0e1a4e11"/>
-				<imageExpression><![CDATA["https://s3-us-west-2.amazonaws.com/lasaga-blog/media/original_images/grupo_imagen.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["https://1.bp.blogspot.com/--bTEM7lSbI0/XxX-RZZ7eoI/AAAAAAAAR8Q/YTsi0J9S9Tk0krg-mWtyIUwGsYNWr5lNACLcBGAsYHQ/s1001/Logo%2Bcmi.jpg"]]></imageExpression>
 			</image>
 			<image onErrorType="Icon">
 				<reportElement x="590" y="20" width="146" height="50" uuid="505658c2-8054-4222-a85c-9bcb12032436"/>

@@ -270,7 +270,7 @@ public class PDFMapper {
 			// m.put("subtotal",totals = totals + rep.getSubtotal());
 			m.put("tax", totals * 0.18 );
 			m.put("total", totals * 0.18 );
-			// m.put("generationDate", generated);
+			m.put("generationDate", generated);
 
 			listproyecciones.add(m);
 		}
@@ -289,16 +289,20 @@ public class PDFMapper {
 			for (IntersectionActivity o : rep.getEquipment()) {
 
 				Map<String, Object> m = new HashMap<String, Object>();
+				m.put("Categoria", o.getCategory());
 				m.put("Descripcion", o.getIntersectionDescription());
 				m.put("Item", o.getCode());
 				m.put("Itemdes", o.getDescription());
+
 				m.put("Cantidad", o.getPreviousQuantity());
-				m.put("Valor", o.getPreviousValue() );
-				m.put("Categoria", o.getCategory());
+				m.put("Valor", o.getPreviousValue());
+
 				m.put("Mes", o.getThisMonthQuantity());
+				m.put("valorMes", o.getThisMonthValue());
+				// m.put("valorMes", o.getOverallValue());
+				
 				m.put("Precio", o.getThisMonthValue());
 				m.put("total", o.getOverallQuantity());
-				m.put("valorMes", o.getOverallValue());
 				m.put("generationDate", generated);
 	
 				ListIndividual.add(m);
@@ -310,13 +314,18 @@ public class PDFMapper {
 				m.put("Descripcion", o.getIntersectionDescription());
 				m.put("Item", o.getCode());
 				m.put("Itemdes", o.getDescription());
+
 				m.put("Cantidad", o.getPreviousQuantity());
-				m.put("Valor", o.getPreviousValue() );
+				m.put("Valor", o.getPreviousValue());
+
 				m.put("Categoria", o.getCategory());
+
 				m.put("Mes", o.getThisMonthQuantity());
+				m.put("valorMes", o.getThisMonthValue());
+				// m.put("valorMes", o.getOverallValue());
+
 				m.put("Precio", o.getThisMonthValue());
 				m.put("total", o.getOverallQuantity());
-				m.put("valorMes", o.getOverallValue());
 				m.put("generationDate", generated);
 	
 				ListIndividual.add(m);
@@ -330,12 +339,15 @@ public class PDFMapper {
 				m.put("Item", o.getCode());
 				m.put("Itemdes", o.getDescription());
 				m.put("Cantidad", o.getPreviousQuantity());
-				m.put("Valor", o.getPreviousValue() );
+				m.put("Valor", o.getPreviousValue());
 				m.put("Categoria", o.getCategory());
+
 				m.put("Mes", o.getThisMonthQuantity());
+				m.put("valorMes", o.getThisMonthValue());
+				// m.put("valorMes", o.getOverallValue());
+
 				m.put("Precio", o.getThisMonthValue());
 				m.put("total", o.getOverallQuantity());
-				m.put("valorMes", o.getOverallValue());
 				m.put("generationDate", generated);
 	
 				ListIndividual.add(m);

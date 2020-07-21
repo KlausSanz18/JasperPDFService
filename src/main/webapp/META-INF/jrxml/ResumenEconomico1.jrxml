@@ -49,12 +49,12 @@
 				<text><![CDATA[Informe General]]></text>
 			</staticText>
 			<image onErrorType="Icon">
-				<reportElement x="50" y="16" width="120" height="50" uuid="da96abd5-1aaa-45d0-a40f-03c17db3c50c"/>
-				<imageExpression><![CDATA["/../../resources/img/cmi.png"]]></imageExpression>
+				<reportElement x="50" y="26" width="90" height="50" uuid="da96abd5-1aaa-45d0-a40f-03c17db3c50c"/>
+				<imageExpression><![CDATA["https://1.bp.blogspot.com/--bTEM7lSbI0/XxX-RZZ7eoI/AAAAAAAAR8Q/YTsi0J9S9Tk0krg-mWtyIUwGsYNWr5lNACLcBGAsYHQ/s1001/Logo%2Bcmi.jpg"]]></imageExpression>
 			</image>
 			<image onErrorType="Icon">
-				<reportElement x="620" y="20" width="146" height="50" uuid="b59b5d37-20df-4a15-8e44-3a2d162ca797"/>
-				<imageExpression><![CDATA["/../../resources/img/intrant.png"]]></imageExpression>
+				<reportElement x="620" y="20" width="210" height="50" uuid="b59b5d37-20df-4a15-8e44-3a2d162ca797"/>
+				<imageExpression><![CDATA["https://www.intrant.gob.do/images/Logos/logo-portal-movil.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="301" y="53" width="211" height="20" uuid="ec8cec02-4c6a-4bc1-90e2-05e4a9fd8046"/>
@@ -195,7 +195,7 @@
 					<box>
 						<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<paragraph rightIndent="1"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
@@ -208,7 +208,7 @@
 					<box>
 						<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<paragraph rightIndent="1"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Precio}]]></textFieldExpression>
@@ -221,7 +221,7 @@
 					<box>
 						<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<paragraph rightIndent="1"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
@@ -237,7 +237,7 @@
 					<box>
 						<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<paragraph rightIndent="1"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Tax}]]></textFieldExpression>
@@ -253,7 +253,7 @@
 					<box>
 						<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<paragraph rightIndent="1"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>

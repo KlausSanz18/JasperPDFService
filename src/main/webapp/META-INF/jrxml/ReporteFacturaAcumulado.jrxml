@@ -190,12 +190,12 @@
 				<text><![CDATA[ INTRANT-CCC-LPN-2018-0014]]></text>
 			</staticText>
 			<image onErrorType="Icon">
-				<reportElement x="20" y="16" width="120" height="50" uuid="1cda2a27-caf9-43a7-ad83-4c308ac05507"/>
-				<imageExpression><![CDATA["/../../resources/img/cmi.png"]]></imageExpression>
+				<reportElement x="20" y="26" width="95" height="50" uuid="1cda2a27-caf9-43a7-ad83-4c308ac05507"/>
+				<imageExpression><![CDATA["https://1.bp.blogspot.com/--bTEM7lSbI0/XxX-RZZ7eoI/AAAAAAAAR8Q/YTsi0J9S9Tk0krg-mWtyIUwGsYNWr5lNACLcBGAsYHQ/s1001/Logo%2Bcmi.jpg"]]></imageExpression>
 			</image>
 			<image onErrorType="Icon">
-				<reportElement x="590" y="20" width="146" height="50" uuid="0b4a3a47-79a0-412f-88f7-ae2b5a356d28"/>
-				<imageExpression><![CDATA["/../../resources/img/intrant.png"]]></imageExpression>
+				<reportElement x="590" y="20" width="210" height="50" uuid="0b4a3a47-79a0-412f-88f7-ae2b5a356d28"/>
+				<imageExpression><![CDATA["https://www.intrant.gob.do/images/Logos/logo-portal-movil.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

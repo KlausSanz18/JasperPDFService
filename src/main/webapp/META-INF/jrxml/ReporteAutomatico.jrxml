@@ -3,7 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteAutomatico" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c0a7ebf-9ace-41ce-999a-a2053fd865bd">
 	<style name="NegativeNum" fontName="SansSerif">
 		<conditionalStyle>
-			<conditionExpression><![CDATA[$F{Valor_total}>0]]></conditionExpression>
+			<conditionExpression><![CDATA[$F{Valor_total}>=0]]></conditionExpression>
 			<style forecolor="#000"/>
 		</conditionalStyle>
 	</style>
@@ -13,12 +13,11 @@
 			<style forecolor="#000"/>
 		</conditionalStyle>
 	</style>
-	<style name="Porcentaje" fontName="SansSerif">
+	<style name="Porcentaje" mode="Opaque" scaleImage="FillFrame" pattern="#,##0.##%">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$F{%_ejecutadas}>= 0]]></conditionExpression>
 			<style mode="Opaque" forecolor="#000" backcolor="#ffffff"/>
 		</conditionalStyle>
-		
 	</style>
 	<queryString>
 		<![CDATA[]]>
@@ -65,12 +64,12 @@
 				<text><![CDATA[Proyección dinámica]]></text>
 			</staticText>
 			<image onErrorType="Icon">
-				<reportElement x="20" y="16" width="120" height="50" uuid="dc4d6f3f-350f-435b-87d2-426c57805d2c"/>
-				<imageExpression><![CDATA["/../../resources/img/cmi.png"]]></imageExpression>
+				<reportElement x="20" y="21" width="90" height="50" uuid="dc4d6f3f-350f-435b-87d2-426c57805d2c"/>
+				<imageExpression><![CDATA["https://1.bp.blogspot.com/--bTEM7lSbI0/XxX-RZZ7eoI/AAAAAAAAR8Q/YTsi0J9S9Tk0krg-mWtyIUwGsYNWr5lNACLcBGAsYHQ/s1001/Logo%2Bcmi.jpg"]]></imageExpression>
 			</image>
 			<image onErrorType="Icon">
-				<reportElement x="590" y="20" width="146" height="50" uuid="b7a3e1b6-de6a-47e7-b1d1-c0993c8119cc"/>
-				<imageExpression><![CDATA["/../../resources/img/intrant.png"]]></imageExpression>
+				<reportElement x="590" y="13" width="210" height="50" uuid="b7a3e1b6-de6a-47e7-b1d1-c0993c8119cc"/>
+				<imageExpression><![CDATA["https://www.intrant.gob.do/images/Logos/logo-portal-movil.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="271" y="54" width="211" height="20" uuid="75b6af07-a7e1-4870-91a2-ca29e4d1daa4"/>
@@ -279,9 +278,9 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="15" splitType="Stretch">
+		<band height="25" splitType="Stretch">
 			<textField>
-				<reportElement x="-10" y="0" width="210" height="15" uuid="78ac8f72-74cd-47b8-97c3-0f0b10b537a2">
+				<reportElement x="-10" y="0" width="210" height="25" uuid="78ac8f72-74cd-47b8-97c3-0f0b10b537a2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a4b31de4-92cf-435d-b2b0-10f7222c6bb2"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -295,7 +294,7 @@
 				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.##;¤-#,##0.##">
-				<reportElement x="200" y="0" width="50" height="15" uuid="f1ef5809-1cb1-482d-b32b-72777830c8d2">
+				<reportElement x="200" y="0" width="50" height="25" uuid="f1ef5809-1cb1-482d-b32b-72777830c8d2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="158c346b-a2c7-4c20-94ec-7dfca17228a2"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -309,7 +308,7 @@
 				<textFieldExpression><![CDATA[$F{Precio_item}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.###">
-				<reportElement x="250" y="0" width="40" height="15" uuid="44762925-c26b-4089-a549-3d45fabe2ee1">
+				<reportElement x="250" y="0" width="40" height="25" uuid="44762925-c26b-4089-a549-3d45fabe2ee1">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="144a0639-e1ac-45aa-9ef2-94bd0d5f264c"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -323,7 +322,7 @@
 				<textFieldExpression><![CDATA[$F{Unidades_contratada}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.##;¤-#,##0.##">
-				<reportElement x="290" y="0" width="50" height="15" uuid="818fccba-6b46-4c8f-b5dd-6ffb4a10792c">
+				<reportElement x="290" y="0" width="50" height="25" uuid="818fccba-6b46-4c8f-b5dd-6ffb4a10792c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc20898c-e16c-4792-88cb-19e24979d80d"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -337,7 +336,7 @@
 				<textFieldExpression><![CDATA[$F{valor_cantratada}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="0" width="40" height="15" uuid="1c63ba5f-b896-41af-bc8f-5c1537a161c0">
+				<reportElement x="340" y="0" width="40" height="25" uuid="1c63ba5f-b896-41af-bc8f-5c1537a161c0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e753c4ef-5362-4f85-919e-2dec6c9a2251"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -351,7 +350,7 @@
 				<textFieldExpression><![CDATA[$F{Unidades_ejecutadas}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.##;¤-#,##0.##">
-				<reportElement x="380" y="0" width="60" height="15" uuid="c3b43100-96db-4912-a917-c4cb14e22b22">
+				<reportElement x="380" y="0" width="60" height="25" uuid="c3b43100-96db-4912-a917-c4cb14e22b22">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00a0e3cc-0f56-4b07-9cc0-9643b5987424"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -365,7 +364,7 @@
 				<textFieldExpression><![CDATA[$F{Valor_ejecutadas}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.###">
-				<reportElement x="440" y="0" width="60" height="15" uuid="6ec1b602-1650-443c-93c6-77dfe7f0fcb4">
+				<reportElement x="440" y="0" width="60" height="25" uuid="6ec1b602-1650-443c-93c6-77dfe7f0fcb4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d7b97167-3680-4d14-9f50-6ca738119189"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -379,7 +378,7 @@
 				<textFieldExpression><![CDATA[$F{Unidades_proyectadas}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.##;¤-#,##0.##">
-				<reportElement x="500" y="0" width="60" height="15" uuid="b59d1d93-640f-4910-8d35-0f96f019df64">
+				<reportElement x="500" y="0" width="60" height="25" uuid="b59d1d93-640f-4910-8d35-0f96f019df64">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a599806a-b032-4dbc-a93d-a486f4ee6dd7"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -393,7 +392,7 @@
 				<textFieldExpression><![CDATA[$F{Valor_proyectadas}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.###">
-				<reportElement style="UnidadesTotales" x="560" y="0" width="60" height="15" uuid="af21eb64-24a3-4b9c-9046-cfc39bb26b10">
+				<reportElement style="UnidadesTotales" x="560" y="0" width="60" height="25" uuid="af21eb64-24a3-4b9c-9046-cfc39bb26b10">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="39648f47-a362-4725-9d8b-365e9150022c"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -407,7 +406,7 @@
 				<textFieldExpression><![CDATA[$F{Unidades_total}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.00;¤-#,##0.00">
-				<reportElement style="NegativeNum" x="699" y="0" width="60" height="15" uuid="473f4883-3662-4272-a1c4-17863d7a6740">
+				<reportElement style="NegativeNum" x="699" y="0" width="60" height="25" uuid="473f4883-3662-4272-a1c4-17863d7a6740">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fabbb4d4-0eb8-4550-bc0e-a69e0f3daf12"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
@@ -421,7 +420,7 @@
 				<textFieldExpression><![CDATA[$F{Valor_total}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#&apos;%&apos;">
-				<reportElement style="Porcentaje" positionType="Float" stretchType="RelativeToTallestObject" x="619" y="0" width="80" height="15" uuid="ed2325df-0daa-430e-a01a-8f81811fc046">
+				<reportElement style="Porcentaje" positionType="Float" stretchType="RelativeToTallestObject" x="619" y="0" width="80" height="25" uuid="ed2325df-0daa-430e-a01a-8f81811fc046">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>

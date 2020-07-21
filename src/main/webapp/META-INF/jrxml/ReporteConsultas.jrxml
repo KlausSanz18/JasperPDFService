@@ -41,11 +41,11 @@
 			</staticText>
 			<image onErrorType="Icon">
 				<reportElement x="50" y="16" width="120" height="50" uuid="61baa6a1-5569-4082-8162-80fac618f89a"/>
-				<imageExpression><![CDATA["/../../resources/img/cmi.png"]]></imageExpression>
+				<imageExpression><![CDATA["https://1.bp.blogspot.com/--bTEM7lSbI0/XxX-RZZ7eoI/AAAAAAAAR8Q/YTsi0J9S9Tk0krg-mWtyIUwGsYNWr5lNACLcBGAsYHQ/s1001/Logo%2Bcmi.jpg"]]></imageExpression>
 			</image>
 			<image onErrorType="Icon">
 				<reportElement x="620" y="20" width="146" height="50" uuid="5a802726-f4c1-4d1b-8d8f-240e228b5971"/>
-				<imageExpression><![CDATA["/../../resources/img/intrant.png"]]></imageExpression>
+				<imageExpression><![CDATA["https://www.intrant.gob.do/images/Logos/logo-portal-movil.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="301" y="54" width="211" height="20" uuid="37b2d0b3-5293-4fb2-a0c1-0f7279371c6c"/>
