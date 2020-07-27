@@ -4,19 +4,19 @@
 	<style name="NegativeNum" fontName="SansSerif">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$F{Valor_total}>=0]]></conditionExpression>
-			<style forecolor="#000"/>
+			<style forecolor="#000000"/>
 		</conditionalStyle>
 	</style>
 	<style name="UnidadesTotales" fontName="SansSerif">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$F{Unidades_total}>=0]]></conditionExpression>
-			<style forecolor="#000"/>
+			<style forecolor="#000000"/>
 		</conditionalStyle>
 	</style>
 	<style name="Porcentaje" mode="Opaque" scaleImage="FillFrame" pattern="#,##0.##%">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$F{%_ejecutadas}>= 0]]></conditionExpression>
-			<style mode="Opaque" forecolor="#000" backcolor="#ffffff"/>
+			<style mode="Opaque" forecolor="#000000" backcolor="#FFFFFF"/>
 		</conditionalStyle>
 	</style>
 	<queryString>
@@ -64,11 +64,11 @@
 				<text><![CDATA[Proyección dinámica]]></text>
 			</staticText>
 			<image onErrorType="Icon">
-				<reportElement x="20" y="21" width="90" height="50" uuid="dc4d6f3f-350f-435b-87d2-426c57805d2c"/>
+				<reportElement x="20" y="23" width="90" height="33" uuid="dc4d6f3f-350f-435b-87d2-426c57805d2c"/>
 				<imageExpression><![CDATA["https://1.bp.blogspot.com/--bTEM7lSbI0/XxX-RZZ7eoI/AAAAAAAAR8Q/YTsi0J9S9Tk0krg-mWtyIUwGsYNWr5lNACLcBGAsYHQ/s1001/Logo%2Bcmi.jpg"]]></imageExpression>
 			</image>
 			<image onErrorType="Icon">
-				<reportElement x="590" y="13" width="210" height="50" uuid="b7a3e1b6-de6a-47e7-b1d1-c0993c8119cc"/>
+				<reportElement x="580" y="10" width="220" height="53" uuid="b7a3e1b6-de6a-47e7-b1d1-c0993c8119cc"/>
 				<imageExpression><![CDATA["https://www.intrant.gob.do/images/Logos/logo-portal-movil.png"]]></imageExpression>
 			</image>
 			<staticText>
