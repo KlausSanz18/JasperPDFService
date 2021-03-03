@@ -10,16 +10,18 @@ public class ItemManagement {
     private Integer orderNo;
     private String location;
     private Double quantity;
+    private String adescription;
 
     // private IntersectionActivity ia;
 
     public ItemManagement(){}
 
-    public ItemManagement(Date startDate, Integer orderNo, String location, Double quantity){
+    public ItemManagement(Date startDate, Integer orderNo, String location, Double quantity, String adescription){
         this.startDate = startDate;
         this.orderNo = orderNo;
         this.location = location;
         this.quantity = quantity;
+        this.adescription = adescription; //en prueba
     }
 
 
@@ -60,5 +62,13 @@ public class ItemManagement {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    //En prueba
+    public String getAdescription(){
+        return adescription;
+    }
+    public void setAdescription(String adescription){
+        this.adescription = adescription;
     }
 }

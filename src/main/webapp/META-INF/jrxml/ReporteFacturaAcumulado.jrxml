@@ -180,7 +180,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[Acumulado Por Categoría]]></text>
+				<text><![CDATA[Facturación acumulado]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="287" y="54" width="186" height="20" uuid="743986be-9449-42c5-b840-b3aa9e44e94c"/>

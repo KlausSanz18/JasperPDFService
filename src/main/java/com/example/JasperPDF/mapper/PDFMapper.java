@@ -552,6 +552,7 @@ public class PDFMapper {
 			m.put("noOrden", rep.getOrderNo());
 			m.put("ubicacion", rep.getLocation());
 			m.put("Cantidad", rep.getQuantity());
+			m.put("DescripcionActividad", rep.getAdescription());
 		
 			
 			ListIndividual.add(m);

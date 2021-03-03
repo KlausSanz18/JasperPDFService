@@ -8,21 +8,25 @@
 	<field name="Fecha" class="java.util.Date"/>
 	<field name="Cantidad" class="java.lang.Double"/>
 	<field name="ubicacion" class="java.lang.String"/>
+	<field name="DescripcionActividad" class="java.lang.String"/>
 	<field name="noOrden" class="java.lang.Integer"/>
 	<variable name="Cantidad1" class="java.lang.Double" calculation="Sum">
 		<variableExpression><![CDATA[$F{Cantidad}]]></variableExpression>
+	</variable>
+	<variable name="DescripcionActividad" class="java.lang.String">
+		<variableExpression><![CDATA[$F{DescripcionActividad}]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="74" splitType="Stretch">
+		<band height="130" splitType="Immediate">
 			<staticText>
 				<reportElement x="269" y="24" width="223" height="30" uuid="ad39e8bf-7e90-4642-bb71-648d88b140ea"/>
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[Ejecución por Ítem]]></text>
+				<text><![CDATA[Búsqueda individual]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="287" y="54" width="186" height="20" uuid="39ea6b55-d467-4b07-974b-ed7f466747db"/>
@@ -37,14 +41,21 @@
 			</image>
 			<image onErrorType="Icon">
 				<reportElement x="590" y="20" width="146" height="50" uuid="505658c2-8054-4222-a85c-9bcb12032436"/>
-				<imageExpression><![CDATA["https://consultalicencia.intrant.gob.do/image/Logo-INTRANT.png"]]></imageExpression>
+				<imageExpression><![CDATA["http://consultalicencia.intrant.gob.do/image/Logo-INTRANT.png"]]></imageExpression>
 			</image>
+			<textField>
+				<reportElement x="0" y="100" width="800" height="20" uuid="39ea6b55-d467-4b07-974b-ed7f466747db"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>				
+				<textFieldExpression><![CDATA[$F{DescripcionActividad}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<columnHeader>
 		<band height="60" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="30" width="180" height="30" backcolor="#DEE2E6" uuid="f08b2abd-5d43-41e7-a0b0-6f66f48ad1fd">
+				<reportElement mode="Opaque" x="0" y="10" width="180" height="30" backcolor="#DEE2E6" uuid="f08b2abd-5d43-41e7-a0b0-6f66f48ad1fd">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f488428b-9f58-4b3f-a028-fb74bd8b067f"/>
 				</reportElement>
 				<box>
@@ -56,7 +67,7 @@
 				<text><![CDATA[Ejecutado el]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="670" y="30" width="131" height="30" backcolor="#DEE2E6" uuid="cdde7208-c8c3-4012-bee7-acc45ad03538">
+				<reportElement mode="Opaque" x="670" y="10" width="131" height="30" backcolor="#DEE2E6" uuid="cdde7208-c8c3-4012-bee7-acc45ad03538">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5dcf9e2b-3670-40dc-9f95-6d50aec5a06e"/>
 				</reportElement>
 				<box>
@@ -68,7 +79,7 @@
 				<text><![CDATA[Cantidad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="287" y="30" width="383" height="30" backcolor="#DEE2E6" uuid="0ccb3beb-096a-49a6-8965-744a8908cdb0">
+				<reportElement mode="Opaque" x="287" y="10" width="383" height="30" backcolor="#DEE2E6" uuid="0ccb3beb-096a-49a6-8965-744a8908cdb0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b311386-3610-4ea5-ab7c-d01839c90315"/>
 				</reportElement>
 				<box>
@@ -80,7 +91,7 @@
 				<text><![CDATA[Ubicación]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="180" y="30" width="107" height="30" backcolor="#DEE2E6" uuid="373b7ddd-f773-4210-bfa3-87d581056086">
+				<reportElement mode="Opaque" x="180" y="10" width="107" height="30" backcolor="#DEE2E6" uuid="373b7ddd-f773-4210-bfa3-87d581056086">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="faed3fb7-0dcf-4813-a860-d90fcb84898d"/>
 				</reportElement>
 				<box>
@@ -96,7 +107,7 @@
 	<detail>
 		<band height="29" splitType="Stretch">
 			<frame>
-				<reportElement x="0" y="0" width="801" height="29" uuid="4ee338ea-fb19-47db-9747-ef64aa55fb03"/>
+				<reportElement x="0" y="-20" width="801" height="29" uuid="4ee338ea-fb19-47db-9747-ef64aa55fb03"/>
 				<box>
 					<pen lineWidth="0.05" lineColor="#CCC8C8"/>
 				</box>

@@ -286,7 +286,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Ejecución por Categoria]]></text>
+				<text><![CDATA[Avance individual]]></text>
 			</staticText>
 			<image onErrorType="Icon">
 				<reportElement x="50" y="26" width="90" height="31" uuid="c0fa4c85-4b4a-4aba-99b0-5df7373455f1"/>
